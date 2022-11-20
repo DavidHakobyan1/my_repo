@@ -1,0 +1,12 @@
+name: my_workflows
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - users: actions/checkout@v1
+    - name: hello world
