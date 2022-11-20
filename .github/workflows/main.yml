@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+      
+env:
+  DAY: Monday
 jobs:
   mytesting:
     runs-on: ubuntu-latest
@@ -13,3 +16,6 @@ jobs:
       
     - name: ls result
       run: ls -la
+    - name: "Say Hello Mona it's Monday"
+      run: echo "Today is $DAY"
+      
