@@ -17,5 +17,5 @@ jobs:
     - name: ls result
       run: ls -la
     - name: "Say Hello Mona it's Monday"
-      run: echo "Today is $DAY"
+      run: echo "Today is < $DAY"
       
