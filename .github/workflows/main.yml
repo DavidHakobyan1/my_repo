@@ -10,3 +10,6 @@ jobs:
     steps:
     - name: git clone our repo
       uses: actions/checkout@v1
+      
+    - name: ls result
+      run: ls -la
