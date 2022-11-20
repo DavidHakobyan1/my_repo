@@ -3,7 +3,7 @@ name: my_workflows
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   mytesting:
     runs-on: ubuntu-latest
