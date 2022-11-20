@@ -5,7 +5,8 @@ on:
     branches:
       - master
 jobs:
-  build:
+  mytesting:
     runs-on: ubuntu-latest
     steps:
-    - users: actions/checkout@v1
+    - name: git clone our repo
+    - uses: actions/checkout@v1
