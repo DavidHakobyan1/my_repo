@@ -8,5 +8,5 @@ jobs:
   mytesting:
     runs-on: ubuntu-latest
     steps:
-      - name: git clone our repo
-        uses: actions/checkout@v1
+    - name: git clone our repo
+      uses: actions/checkout@v1
