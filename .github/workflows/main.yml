@@ -9,4 +9,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - users: actions/checkout@v1
-    - name: hello world
