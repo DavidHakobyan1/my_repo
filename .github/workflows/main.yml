@@ -4,21 +4,44 @@ on:
   push:
     branches:
       - 'main'
-      
 env:
   DAY: Monday
+#jobs:
+#  mytesting:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: git clone our repo
+#      uses: actions/checkout@v1
+#      
+#    - name: ls result
+#      run: ls -la
+#      
+#    - name: "Hello David it's Monday"
+#      run: echo "Today is < $DAY"
+#    - name: echo hello
+#      run: |
+#        echo hello
 jobs:
-  mytesting:
+  job1:
     runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
-    - name: git clone our repo
-      uses: actions/checkout@v1
-      
-    - name: ls result
-      run: ls -la
-    - name: "Say Hello Mona it's Monday"
-      run: echo "Today is < $DAY"
-    - name: echo hello
-      run: |
-        echo hello
+      - id: step1
+        run: echo "test=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "test=world" >> $GITHUB_OUTPUT job1:
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
+    steps:
+      - id: step1
+        run: echo "test=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "test=world" >> $GITHUB_OUTPUT
+        
       
