@@ -28,3 +28,6 @@ jobs:
         echo "I am $AGE years old"
         echo ${{ env.AGE }}
         
+    - name: run file.sh
+      run: ./file.sh
+        
