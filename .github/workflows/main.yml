@@ -29,4 +29,4 @@ jobs:
         echo ${{ env.AGE }}
         
     - name: run file.sh
-      run: ./file.sh
+      run: bash file.sh
