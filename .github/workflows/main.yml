@@ -5,10 +5,12 @@ on:
     branches:
       - 'main'
 env:
-  DAY: Monday
+  NAME: Jhon
 jobs:
   mytesting:
     runs-on: ubuntu-latest
+    env:
+      AGE: 18
     steps:
     - name: git clone our repo
       uses: actions/checkout@v1
@@ -16,8 +18,11 @@ jobs:
     - name: ls result
       run: ls -la
       
-    - name: "Hello David it's Monday"
-      run: echo "Today is < $DAY"
-    - name: echo hello
+    - name: echo Name
       run: |
-        echo hello
+        echo "My name is $NAME"
+        
+    - name: echo year
+      run: |
+        echo "I am $AGE years old"
+        
