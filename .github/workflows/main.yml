@@ -21,8 +21,10 @@ jobs:
     - name: echo Name
       run: |
         echo "My name is $NAME"
+        echo ${{ env.NAME }}
         
     - name: echo year
       run: |
         echo "I am $AGE years old"
+        echo ${{ env.AGE }}
         
