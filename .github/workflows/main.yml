@@ -30,4 +30,3 @@ jobs:
         
     - name: run file.sh
       run: ./file.sh
-        
