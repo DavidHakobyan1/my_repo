@@ -17,6 +17,7 @@ jobs:
       
     - name: ls result
       id: testid
+      continue-on-error: true
       run: ls -la asdfqwefracACD
       
     - name: echo Name
