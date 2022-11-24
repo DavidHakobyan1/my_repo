@@ -16,6 +16,7 @@ jobs:
       uses: actions/checkout@v1
       
     - name: ls result
+      id: testid
       run: ls -la
       
     - name: echo Name
@@ -30,3 +31,6 @@ jobs:
         
     - name: run file.sh
       run: bash file.sh
+      
+    - name: print by id
+      run: echo ${{ steps.testid.outputs }}
