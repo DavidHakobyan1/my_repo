@@ -33,4 +33,4 @@ jobs:
       run: bash file.sh
       
     - name: print by id
-      run: echo ${{ toJson(steps.testid) }}
+      run: echo ${{ toJson(steps.testid.outcome) }}
