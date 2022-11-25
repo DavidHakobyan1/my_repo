@@ -15,9 +15,6 @@ jobs:
       continue: true
       time: 3
     steps:
-      - continue-on-error: ${{ fromJSON(env.continue) }}
-        timeout-minutes: ${{ fromJSON(env.time) }}
-      
       - name: git clone our repo
         uses: actions/checkout@v1
       
