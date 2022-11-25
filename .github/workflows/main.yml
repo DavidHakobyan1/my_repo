@@ -34,7 +34,8 @@ jobs:
           echo ${{ env.AGE }}
         
       - name: run file.sh
-        run: bash file.sh
+        run: ./file.sh
+        shell: bash
       
       - name: print by id
         run: echo ${{ toJson(steps.testid.outcom) }}
