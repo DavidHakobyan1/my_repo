@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       AGE: 18
-      continue: true
+      CONTINUE: true
       time: 3
     steps:
       - name: git clone our repo
@@ -20,7 +20,7 @@ jobs:
       
       - name: ls result
         id: testid
-        continue-on-error: true
+        continue-on-error: $CONTINUE
         run: ls -la asdfqwefracACD
 
       - name: echo Name
