@@ -35,3 +35,12 @@ jobs:
       
     - name: print by id
       run: echo ${{ toJson(steps.testid.outcom) }}
+      
+    - name: matrix 
+      id: set-matrix
+      run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
+      
+    - name: verify
+      run: echo ${{ fromJSON(steps.set-matrix.outputs) }}
+      
+      
