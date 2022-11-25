@@ -6,41 +6,41 @@ on:
       - 'main'
 env:
   NAME: Jhon
+  
 jobs:
   mytesting:
     runs-on: ubuntu-latest
     env:
       AGE: 18
+      continue: true
+      time: 3
     steps:
-    - name: git clone our repo
-      uses: actions/checkout@v1
+      - continue-on-error: ${{ fromJSON(env.continue) }}
+        timeout-minutes: ${{ fromJSON(env.time) }}
       
-    - name: ls result
-      id: testid
-      continue-on-error: true
-      run: ls -la asdfqwefracACD
+      - name: git clone our repo
+        uses: actions/checkout@v1
       
-    - name: echo Name
-      run: |
-        echo "My name is $NAME"
-        echo ${{ env.NAME }}
+      - name: ls result
+        id: testid
+        continue-on-error: true
+        run: ls -la asdfqwefracACD
+
+      - name: echo Name
+        run: |
+          echo "My name is $NAME"
+          echo ${{ env.NAME }}
         
-    - name: echo year
-      run: |
-        echo "I am $AGE years old"
-        echo ${{ env.AGE }}
+      - name: echo year
+        run: |
+          echo "I am $AGE years old"
+          echo ${{ env.AGE }}
         
-    - name: run file.sh
-      run: bash file.sh
+      - name: run file.sh
+        run: bash file.sh
       
-    - name: print by id
-      run: echo ${{ toJson(steps.testid.outcom) }}
+      - name: print by id
+        run: echo ${{ toJson(steps.testid.outcom) }}
       
-    - name: matrix 
-      id: set-matrix
-      run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
-      
-    - name: verify
-      run: echo ${{ fromJSON(steps.set-matrix.outputs) }}
       
       
