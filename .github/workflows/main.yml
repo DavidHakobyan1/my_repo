@@ -38,6 +38,12 @@ jobs:
       
       - name: print by id
         run: echo ${{ toJson(steps.testid.outcom) }}
+        
+      - id: step1
+        run: echo "test=world" >> $GITHUB_OUTPUT
+        
+      - name: print world
+        run: echo ${{ steps.step1.outputs.test }}
       
       
       
